@@ -13,11 +13,15 @@ from astronomy import Body, Body_name, Refraction, Equator, Horizon, DefineStar
 from astro_demo_common import ParseArgs
 
 def run():
-    observer, time = ParseArgs(["pos.py", "+46","+16", "2026-01-29T23:00:00.0Z"])    
+    observer, time = ParseArgs(["pos.py", "+46", "+16", "2026-01-29T23:00:00.0Z"])
     print('UTC date = {}'.format(time))
     print()
+    # star with RA and Dec (e.g., Sirius)
+    star_ra  =    6+45/60+ 9/3600  # [h] right ascension hour angle
+    star_dec = -(16+42/60+58/3600) # [°] declination degrees
+    DefineStar(body=Body.Star1,ra=star_ra,dec=star_dec,distanceLightYears=30)
     # ra=101.2870833° dec=-16.7161111° Sirius
-    DefineStar(body=Body.Star1,ra=101.2870833/15,dec=-16.7161111,distanceLightYears=30)
+    #DefineStar(body=Body.Star1,ra=101.2870833/15,dec=-16.7161111,distanceLightYears=30)
     # ra= 88.7929167° dec=  7.4069444° Betelgeuse
     DefineStar(body=Body.Star2,ra=88.7929167/15,dec=7.4069444,distanceLightYears=900)
     print('BODY           RA°     DEC°      AZ°     ALT°')
