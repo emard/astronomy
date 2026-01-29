@@ -30,7 +30,7 @@ def run():
     body_list = [
         Body.Star1, Body.Star2, Body.Star3,
     ]
-    body_comment = { Body.Star1:"Sirius J2000", Body.Star2:"Sirius on date", Body.Star3:"Betelgeuse J2000" }
+    body_comment = { Body.Star1:"Sirius J2000", Body.Star2:"Sirius on date by stellarium (wrong)", Body.Star3:"Betelgeuse J2000" }
     for body in body_list:
         equ_2000 = Equator(body, time, observer, ofdate=False, aberration=True)
         equ_ofdate = Equator(body, time, observer, ofdate=True, aberration=True)
